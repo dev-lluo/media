@@ -1,5 +1,6 @@
 package top.flyfire.media;
 
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
@@ -63,7 +64,27 @@ public final class ImageUtils {
         return null;
     }
 
-    private static String[] GRAY_CHARS = {"##", "++", "::", "..","  "};
+    public static BufferedImage  zoomInImage(BufferedImage  originalImage, Integer times){
+        int width = originalImage.getWidth()*times;
+        int height = originalImage.getHeight()*times;
+        return zoomImage(originalImage,width,height);
+    }
+
+    public static BufferedImage  zoomOutImage(BufferedImage  originalImage, Integer times){
+        int width = originalImage.getWidth()/times;
+        int height = originalImage.getHeight()/times;
+        return zoomImage(originalImage,width,height);
+    }
+
+    public static BufferedImage zoomImage(BufferedImage  originalImage,int newWidth,int newHeight){
+        BufferedImage newImage = new BufferedImage(newWidth,newWidth,originalImage.getType());
+        Graphics g = newImage.getGraphics();
+        g.drawImage(originalImage, 0,0,newWidth,newWidth,null);
+        g.dispose();
+        return newImage;
+    }
+
+    private static String[] GRAY_CHARS = {"@@", "**", "++", "=:","  "};
 
     private static String RELINE = "\r\n";
 

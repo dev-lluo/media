@@ -22,6 +22,7 @@ public class ImageUtilsTest {
     public void image2Text() throws Exception {
         File file = new File("C:\\Users\\shyy_work\\Desktop\\grayDraw.txt");
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
+//        bufferedWriter.write(ImageUtils.image2Text(ImageUtils.zoomOutImage(ImageIO.read(new File("C:\\Users\\shyy_work\\Desktop\\large_168220_2.jpg")),2)));
         bufferedWriter.write(ImageUtils.image2Text(ImageIO.read(new File("C:\\Users\\shyy_work\\Desktop\\images.jpg"))));
         bufferedWriter.flush();
     }
@@ -35,9 +36,9 @@ public class ImageUtilsTest {
 
     @org.junit.Test
     public void binaryImage() throws Exception {
-        BufferedImage bufferedImage = ImageIO.read(new File("C:\\Users\\shyy_work\\Desktop\\show.bmp"));
+        BufferedImage bufferedImage = ImageIO.read(new File("C:\\Users\\shyy_work\\Desktop\\genimage.png"));
         ImageUtils.binarizate(bufferedImage);
-        ImageIO.write(bufferedImage,"bmp",new File("C:\\Users\\shyy_work\\Desktop\\showBinary.bmp"));
+        ImageIO.write(bufferedImage,"bmp",new File("C:\\Users\\shyy_work\\Desktop\\genimageBinary.png"));
     }
 
 }
