@@ -63,7 +63,7 @@ public final class ImageUtils {
         return null;
     }
 
-    private static String[] GRAY_CHARS = {"@@", "**", "++", "::", "  "};
+    private static String[] GRAY_CHARS = {"##", "++", "::", "..","  "};
 
     private static String RELINE = "\r\n";
 

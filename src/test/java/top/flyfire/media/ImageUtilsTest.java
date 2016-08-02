@@ -22,7 +22,7 @@ public class ImageUtilsTest {
     public void image2Text() throws Exception {
         File file = new File("C:\\Users\\shyy_work\\Desktop\\grayDraw.txt");
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
-        bufferedWriter.write(ImageUtils.image2Text(ImageIO.read(new File("C:\\Users\\shyy_work\\Desktop\\sc01.jpg"))));
+        bufferedWriter.write(ImageUtils.image2Text(ImageIO.read(new File("C:\\Users\\shyy_work\\Desktop\\images.jpg"))));
         bufferedWriter.flush();
     }
 
